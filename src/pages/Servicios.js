@@ -19,13 +19,14 @@ export function renderServicios() {
       // Enlace personalizado por servicio para la siguiente fase de WhatsApp
       const waLink = generarEnlaceWhatsApp(`Hola, quiero agendar una cita para el servicio de: "${s.nombre}".`);
 
+      const mediaContent = s.imagen
+        ? `<img src="${s.imagen}" alt="${s.nombre}" class="service-card__image" loading="lazy" />`
+        : `<div class="team-card__avatar-placeholder" style="background: rgba(255,255,255,0.2); border: 2px solid #ffffff; font-size: 2rem;">${initials}</div>`;
+
       return `
         <article class="card service-card">
           <div class="service-card__media">
-            <!-- Marcador gráfico de color en degradé premium -->
-            <div class="team-card__avatar-placeholder" style="background: rgba(255,255,255,0.2); border: 2px solid #ffffff; font-size: 2rem;">
-              ${initials}
-            </div>
+            ${mediaContent}
           </div>
           <div class="service-card__body">
             <h3 class="service-card__title">${s.nombre}</h3>

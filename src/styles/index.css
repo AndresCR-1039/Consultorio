@@ -1033,6 +1033,18 @@ p {
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
+  overflow: hidden;
+}
+
+.service-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.service-card:hover .service-card__image {
+  transform: scale(1.05);
 }
 
 .service-card__icon {
